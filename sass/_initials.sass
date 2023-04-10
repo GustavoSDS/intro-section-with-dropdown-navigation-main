@@ -1,0 +1,22 @@
+@use 'variables' as var
+@use 'mixins' as mix
+
+*
+    font: var.$Font
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+body
+    background-color: var.$Almost-White
+    position: relative
+
+.container
+    @include mix.media-width-height(375px, auto, false)
+    @include mix.media-width-height(1440px, 900px, true)
+    margin: auto
+
+.attribution
+    font-size: 11px
+    text-align: center
+    a
+        color: hsl(228, 45%, 44%)

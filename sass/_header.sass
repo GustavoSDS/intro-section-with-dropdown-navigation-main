@@ -1,0 +1,157 @@
+@use 'variables' as var
+@use 'mixins' as mix
+
+.header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 24px 16px 0
+    &__logo:hover
+        cursor: pointer
+    &__background
+        display: none
+        position: absolute
+        width: 100%
+        height: 100vh
+        left: 0
+        top: 0
+        z-index: 1
+        background-color: var.$Almost-Black-Background
+
+.navbar-mobile
+    z-index: 2
+    &__button-close-menu,&__menus
+        display: none
+
+    &__button-open-menu
+        border: none
+        display: block
+        &:hover
+            cursor: pointer
+
+    &__button-close-menu
+        border: none
+        float: right
+        margin: 22px 20px 30px 0
+        background-color: var.$Almost-White
+        &:hover
+            cursor: pointer
+            
+    &__menus
+        position: absolute
+        width: 240px
+        height: 100vh
+        top: 0
+        right: 0
+        padding-left: 24px
+        list-style: none
+        background-color: var.$Almost-White
+    li:hover
+        cursor: pointer
+        color: var.$Almost-Black
+    .navbar-mobile__link:hover ul li
+        color: var.$Medium-Gray
+    &__menu
+        clear: both
+        margin-top: 28px
+        color: var.$Medium-Gray
+
+        &:nth-child(2), &:nth-child(3)
+            background:
+                image: url('../images/icon-arrow-down.svg')
+                repeat: no-repeat
+                size: 14px
+                position: 45% top
+        li
+            padding-left: 10px
+            @include mix.list-style()
+    #company-mobile
+        @include mix.submenu(80%, 100px, 20px, 25px, false, space-between)
+        li
+            list-style: none
+    #feactures-mobile
+        @include mix.submenu(80%, 140px, 20px, 45px, false, space-between)
+    .user-account
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        margin: 35px 22px 0 0
+        &__button-login
+            @include mix.button(196px, 42px, auto, auto, unset, 14px, var.$Almost-White, var.$Medium-Gray, 1rem, 500, var.$Almost-White, false)
+
+        &__button-register
+            @include mix.button(196px, 42px, 5px, auto, var.$Almost-Black, 14px, var.$Almost-White, var.$Medium-Gray, 1rem, 500, var.$Almost-White, true)
+
+.navbar-desktop
+    display: none
+.display-flex
+    display: flex
+.display-none
+    display: none
+.bg-arrow-up
+    background-image: url('../images/icon-arrow-up.svg') !important
+
+@media screen and ( min-width: 1200px )
+    .header
+        position: relative
+        height: 50px
+        margin-top: 18px
+        padding: 0 40px 0
+        justify-content: flex-start
+
+        .navbar-mobile, .header__background
+            display: none
+
+        .navbar-desktop
+            display: block
+
+            &__menus
+                width: 380px
+                display: flex
+                justify-content: space-between
+                margin-left: 60px
+            &__menu
+                display: flex
+                position: relative
+                color: var.$Medium-Gray
+
+                li
+                    @include mix.list-style()
+                &:hover
+                    cursor: pointer
+                    color: var.$Almost-Black
+                &:hover ul li
+                    color: var.$Medium-Gray
+
+                #feactures-desktop
+                    @include mix.submenu(153px, 160px, 20px, 45px, true, space-evenly)
+                    left: -60%
+                    top: 20px
+                #company-desktop
+                    @include mix.submenu(116px, 127px, 20px, 25px, true, space-evenly)
+                    top: 20px
+                    li
+                        list-style: none
+                &:nth-child(1), &:nth-child(2)
+                    width: 95px
+                    background:
+                        image: url('../images/icon-arrow-down.svg')
+                        repeat: no-repeat
+                        size: 14px
+                        position: right center
+                    li:hover
+                        cursor: pointer
+                        color: var.$Almost-Black
+
+        .user-account
+            width: 180px
+            margin: 0
+            display: flex
+            justify-content: space-between
+            position: absolute
+            top: 5px
+            right: 40px
+            &__button-login
+                @include mix.button(40px, 42px, auto, auto, unset, 14px, var.$Almost-White, var.$Medium-Gray, 1rem, 500, var.$Almost-White, false)
+            &__button-register
+                @include mix.button(105px, 42px, auto, auto, var.$Almost-Black, 14px, var.$Almost-White, var.$Medium-Gray, 1rem, 500, var.$Almost-White, true)

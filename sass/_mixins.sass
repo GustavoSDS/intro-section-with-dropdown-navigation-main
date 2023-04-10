@@ -1,0 +1,51 @@
+@mixin button($width, $height, $mt, $mb, $br-color, $br-radius, $bg-color, $color, $ft-size, $ft-weight, $color-hover, $border)
+    width: $width
+    height: $height
+    display: block
+    margin: $mt 0 $mb
+    border-radius: $br-radius
+    background-color: $bg-color
+    color: $color
+    font-size: $ft-size
+    font-weight: $ft-weight
+    border: none
+    &:hover
+        cursor: pointer
+        color: black
+        background-color: $color-hover
+        @if $border
+            border: 1px solid $br-color
+    @if $border
+        border: 1px solid $color
+
+@mixin submenu($width, $height, $mt, $pl, $desktop, $jc)
+    width: $width
+    height: $height
+    margin-top: $mt
+    padding-left: $pl
+    justify-content: $jc
+    flex-direction: column
+    border-radius: 12px
+    @if $desktop
+        background-color: white
+        box-shadow: 1px 1px 30px hsl(0, 0%, 79%)
+        position: absolute
+
+@mixin media-width-height($width, $height, $desktop)
+    @if $desktop
+        @media screen and ( min-width: 1200px )
+            width: $width
+            height: $height
+    @else
+        width: $width
+        height: $height
+
+@mixin list-style()
+    &:nth-child(1)
+        list-style-image: url('../images/icon-todo.svg')
+    &:nth-child(2)
+        list-style-image: url('../images/icon-calendar.svg')
+    &:nth-child(3)
+        list-style-image: url('../images/icon-reminders.svg')
+    &:nth-child(4)
+        list-style-image: url('../images/icon-planning.svg')

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="header__background"></div>
+  <div class="container">
+    <header class="header">
+      <img src="./images/logo.svg" alt="logo" class="header__logo">
+      <!-- Start section navbar for desktop -->
+      <nav class="navbar-desktop">
+        <ul class="navbar-desktop__menus">
+          <li id="menuDesktopFeactures" class="navbar-desktop__menu">Features
+            <ul id="feactures-desktop" class="display-none">
+              <li>Todo List</li>
+              <li>Calendar</li>
+              <li>Reminders</li>
+              <li>Planing</li>
+            </ul>
+          </li>
+          <li id="menuDesktopCompany" class="navbar-desktop__menu">Company
+            <ul id="company-desktop" class="display-none">
+              <li>History</li>
+              <li>Our Team</li>
+              <li>Blog</li>
+            </ul>
+          </li>
+          <li class="navbar-desktop__menu">Careers</li>
+          <li class="navbar-desktop__menu">About</li>
+          <div class="user-account">
+            <button class="user-account__button-login">Login</button>
+            <button class="user-account__button-register">Register</button>
+          </div>
+        </ul>
+      </nav>
+      <!-- End section navbar desktop -->
+
+      <!-- Start navbar for mobile -->
+      <nav class="navbar-mobile">
+        <button id="btnOpenMenu" class="navbar-mobile__button-open-menu">
+          <img src="./images/icon-menu.svg" alt="icon-menu">
+        </button>
+        <ul id="menuMobile" class="navbar-mobile__menus">
+          <button id="btnCloseMenu" class="navbar-mobile__button-close-menu">
+            <img src="./images/icon-close-menu.svg" alt="icon-menu">
+          </button>
+          <li id="menuMobileFeactures" class="navbar-mobile__menu">Features
+            <ul id="feactures-mobile" class="display-none">
+              <li>Todo List</li>
+              <li>Calendar</li>
+              <li>Reminders</li>
+              <li>Planing</li>
+            </ul>
+          </li>
+          <li id="menuMobileCompany" class="navbar-mobile__menu">Company
+            <ul id="company-mobile" class="display-none">
+              <li>History</li>
+              <li>Our Team</li>
+              <li>Blog</li>
+            </ul>
+          </li>
+          <li class="navbar-mobile__menu">Careers</li>
+          <li class="navbar-mobile__menu">About</li>
+          <div class="user-account">
+            <button class="user-account__button-login">Login</button>
+            <button class="user-account__button-register">Register</button>
+          </div>
+        </ul>
+      </nav>
+      <!-- End section navbar for mobike -->
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero__image"></div>
+      </section>
+
+      <section class="primary">
+        <h1 class="primary__title">Make remote work</h1>
+        <p class="primary__description">
+          Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch
+          productivity soar.
+        </p>
+        <button class="primary__button-learn-more">Lear more</button>
+        <div class="primary__sponsors">
+          <img src="./images/client-databiz.svg" alt="client-databiz">
+          <img src="./images/client-audiophile.svg" alt="client-audiophile">
+          <img src="./images/client-meet.svg" alt="client-meet">
+          <img src="./images/client-maker.svg" alt="client-maker">
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!--   <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </footer> -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

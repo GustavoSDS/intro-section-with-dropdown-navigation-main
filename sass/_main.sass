@@ -1,0 +1,68 @@
+@use 'variables' as var
+@use 'mixins' as mix
+.main
+    height: 730px
+
+    .hero
+        width: 100%
+        height: 280px
+        margin: 20px 0 48px
+        background:
+            image: url('../images/image-hero-mobile.png')
+            repeat: no-repeat
+            size: cover
+
+    .primary
+        padding: 0 16px 0
+
+        &__title
+            text-align: center
+            letter-spacing: 0.02em
+            font:
+                size: 34px
+                weight: 700
+        &__description
+            width: 345px
+            text-align: center
+            margin: 20px auto 28px
+            font-size: 1rem
+            line-height: 25px
+            letter-spacing: 0.01em
+            color: var.$Medium-Gray
+        &__button-learn-more
+            @include mix.button(137px, 48px, 0, 48px, var.$Almost-Black, 14px, var.$Almost-Black, var.$Almost-White, 1rem, 700, var.$Almost-White, true)
+
+        &__sponsors
+            display: flex
+            justify-content: space-between
+            align-items: center
+            img
+                width: 64px
+
+    @media screen and ( min-width: 1200px )
+        display: flex
+        flex-direction: row-reverse
+        .hero
+            width: 610px
+            height: 100%
+            margin: 65px 0 0
+            margin-right: 65px
+            background:
+                image: url('../images/image-hero-desktop.png')
+                size: contain
+
+        .primary
+            width: 540px
+            height: 550px
+            margin: 168px auto
+            padding: 0
+            &__title
+                font-size: 82px
+                text-align: left
+                letter-spacing: 0
+            &__description
+                width: 385px
+                margin: 70px 0 50px
+                text-align: left
+            &__button-learn-more
+                @include mix.button(163px, 56px, 0, 95px, var.$Almost-Black, 14px, var.$Almost-Black, var.$Almost-White, 1rem, 700, var.$Almost-White, true)
