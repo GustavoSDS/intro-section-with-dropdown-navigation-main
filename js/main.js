@@ -19,8 +19,10 @@ btnOpenMenu.addEventListener('click', () => {
     setDisplay(menuMobile, 'block');
     setDisplay(btnCloseMenu, 'block');
     setDisplay(backgroundMobile, 'block');
+    setDisplay(btnOpenMenu, 'none');
 });
 btnCloseMenu.addEventListener('click', () => {
+    setDisplay(btnOpenMenu, 'block');
     setDisplay(menuMobile, 'none');
     setDisplay(btnCloseMenu, 'none');
     setDisplay(backgroundMobile, 'none');
